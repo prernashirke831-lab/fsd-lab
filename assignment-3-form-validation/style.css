@@ -1,0 +1,7 @@
+.pw-row{display:flex;gap:.5rem}
+.pw-row button{white-space:nowrap}
+.meter{height:6px;background:var(--line);border-radius:6px;margin-top:.5rem;overflow:hidden}
+.meter span{display:block;height:100%;width:0;background:var(--danger);transition:width .2s,background .2s}
+.hint{font-size:.82rem;color:var(--muted);margin:.3rem 0 0}
+.success{border-color:var(--ok)}
+.success h2{margin-top:0;color:var(--ok)}

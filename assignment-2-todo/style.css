@@ -1,0 +1,15 @@
+.sr{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0)}
+.add-row{display:flex;gap:.6rem}
+.add-row input{flex:1}
+.filters{display:flex;gap:.4rem;margin:1rem 0}
+.filters button{padding:.3rem .8rem;font-size:.9rem}
+.filters button.active{background:var(--accent-soft);border-color:var(--accent)}
+.task-list{list-style:none;margin:0;padding:0}
+.task{display:flex;align-items:center;gap:.7rem;padding:.7rem .2rem;border-bottom:1px solid var(--line)}
+.task input[type=checkbox]{width:1.2rem;height:1.2rem;accent-color:var(--accent)}
+.task .text{flex:1;word-break:break-word}
+.task.done .text{text-decoration:line-through;color:var(--muted)}
+.task .del{background:transparent;color:var(--danger);border-color:var(--line);padding:.2rem .6rem;font-size:.85rem}
+.empty{color:var(--muted);text-align:center;padding:1.2rem 0;margin:0}
+.footer-row{display:flex;justify-content:space-between;align-items:center;color:var(--muted);font-size:.92rem;margin-top:.8rem}
+.footer-row button{padding:.25rem .7rem;font-size:.85rem}

@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>MCA40290 · Lab on Full Stack Development — Prerna Shirke</title>
+<link rel="stylesheet" href="assets/shared.css">
+<style>
+  body{background-image:linear-gradient(var(--line) 1px,transparent 1px),linear-gradient(90deg,var(--line) 1px,transparent 1px);background-size:32px 32px;background-attachment:fixed}
+  @media (prefers-color-scheme:dark){body{background-image:none}}
+  .hero{padding:clamp(2.5rem,8vw,5rem) 0 2rem}
+  .hero h1{font-size:clamp(2rem,6vw,3.6rem);letter-spacing:-.02em;max-width:16ch;margin:0 0 .8rem}
+  .hero p{font-size:1.1rem;color:var(--muted);max-width:56ch;margin:0 0 1.2rem}
+  .meta{display:flex;flex-wrap:wrap;gap:.5rem}
+  .meta span{background:var(--card);border:1px solid var(--line);border-radius:999px;padding:.25rem .8rem;font-size:.88rem}
+  .group{margin:2.5rem 0 .8rem;font-size:1.15rem}
+  .group small{color:var(--muted);font-weight:400;margin-left:.5rem}
+  .grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:1rem}
+  .tile{display:flex;flex-direction:column;gap:.5rem;text-decoration:none;color:var(--ink);padding:1.2rem;transition:border-color .15s,transform .15s}
+  .tile:hover{border-color:var(--accent);transform:translateY(-2px)}
+  .tile .no{font-weight:700;color:var(--accent);font-size:.9rem}
+  .tile h3{margin:0;font-size:1.1rem}
+  .tile p{margin:0;color:var(--muted);font-size:.93rem;flex:1}
+  .tags{display:flex;flex-wrap:wrap;gap:.35rem}
+  .tags i{font-style:normal;font-size:.78rem;background:var(--accent-soft);color:var(--ink);padding:.1rem .55rem;border-radius:6px}
+  .tile .go{font-weight:600;color:var(--accent);margin-top:.3rem}
+  footer{margin-top:3rem;color:var(--muted);font-size:.9rem}
+</style>
+</head>
+<body>
+<main class="container">
+  <section class="hero">
+    <h1>Lab on Full Stack Development</h1>
+    <p>The first six lab assignments for MCA40290, from a plain JavaScript calculator to React components with state. Pick an assignment to open it.</p>
+    <div class="meta"><span>Prerna Shirke</span><span>MIT-WPU, Pune</span><span>MCA40290</span><span>6 assignments</span></div>
+  </section>
+
+  <h2 class="group">JavaScript &amp; the DOM <small>open directly in the browser</small></h2>
+  <div class="grid">
+    <a class="card tile" href="assignment-1-calculator/index.html"><span class="no">Assignment 1</span><h3>JavaScript Calculator</h3><p>Add, subtract, multiply and divide using functions and a switch statement.</p><div class="tags"><i>JavaScript</i><i>Functions</i><i>switch</i></div><span class="go">Open assignment</span></a>
+    <a class="card tile" href="assignment-2-todo/index.html"><span class="no">Assignment 2</span><h3>DOM-based To-Do List</h3><p>Add tasks, mark them complete and delete them using DOM methods.</p><div class="tags"><i>HTML</i><i>CSS</i><i>DOM</i></div><span class="go">Open assignment</span></a>
+    <a class="card tile" href="assignment-3-form-validation/index.html"><span class="no">Assignment 3</span><h3>Form Validation</h3><p>Registration form that validates name, email, phone and password with clear error messages.</p><div class="tags"><i>Validation</i><i>Events</i><i>Regex</i></div><span class="go">Open assignment</span></a>
+  </div>
+
+  <h2 class="group">React <small>open directly in the browser (needs internet for the React CDN)</small></h2>
+  <div class="grid">
+    <a class="card tile" href="assignment-4-react-profile-card/index.html"><span class="no">Assignment 4</span><h3>React Profile Card</h3><p>A reusable ProfileCard component that receives name, image URL and description as props.</p><div class="tags"><i>React</i><i>Props</i><i>Components</i></div><span class="go">Open assignment</span></a>
+    <a class="card tile" href="assignment-5-react-controlled-form/index.html"><span class="no">Assignment 5</span><h3>Controlled React Form</h3><p>Form inputs driven by state, with the entered data shown live below the form.</p><div class="tags"><i>React</i><i>Controlled inputs</i><i>State</i></div><span class="go">Open assignment</span></a>
+    <a class="card tile" href="assignment-6-react-counter/index.html"><span class="no">Assignment 6</span><h3>React Counter App</h3><p>Increment, decrement and reset a value with the useState hook.</p><div class="tags"><i>React</i><i>useState</i><i>Hooks</i></div><span class="go">Open assignment</span></a>
+  </div>
+
+  <footer>MCA40290 · Lab on Full Stack Development · MIT World Peace University, Pune</footer>
+</main>
+</body>
+</html>

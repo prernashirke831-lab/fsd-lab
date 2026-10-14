@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Assignment 2 – DOM To-Do List</title>
+<link rel="stylesheet" href="../assets/shared.css">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header class="topbar"><a href="../index.html">All assignments</a><span>Assignment 2 of 6</span></header>
+<main class="container narrow">
+  <h1>To-Do List</h1>
+  <p class="sub">Add tasks, tick them off and delete them. Everything is built with DOM methods (createElement, appendChild, classList, remove). Your list is kept in this browser.</p>
+  <section class="card">
+    <form id="task-form" class="add-row" autocomplete="off">
+      <label for="task-input" class="sr">New task</label>
+      <input id="task-input" type="text" placeholder="What needs doing?" maxlength="120">
+      <button type="submit">Add task</button>
+    </form>
+    <p id="task-error" class="error" role="alert"></p>
+
+    <div class="filters" role="group" aria-label="Filter tasks">
+      <button class="ghost active" data-filter="all">All</button>
+      <button class="ghost" data-filter="active">To do</button>
+      <button class="ghost" data-filter="done">Completed</button>
+    </div>
+
+    <ul id="task-list" class="task-list"></ul>
+    <p id="empty" class="empty">No tasks yet. Add your first one above.</p>
+
+    <div class="footer-row">
+      <span id="count">0 tasks left</span>
+      <button id="clear-done" class="ghost">Clear completed</button>
+    </div>
+  </section>
+</main>
+<script src="script.js"></script>
+</body>
+</html>

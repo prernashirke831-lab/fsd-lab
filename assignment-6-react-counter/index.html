@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Assignment 6 – React Counter App</title>
+<style>
+:root{--ink:#16243a;--muted:#5a6779;--paper:#f4f6f9;--card:#fff;--line:#d9dfe8;--accent:#0f7c82;--accent-ink:#fff;--accent-soft:#dff1f2;--danger:#c0392b;--ok:#1f8a4c;color-scheme:light}
+@media (prefers-color-scheme:dark){:root{--ink:#e8edf5;--muted:#9aa7ba;--paper:#0f1724;--card:#17212f;--line:#2a3649;--accent:#3fc1c9;--accent-ink:#06222a;--accent-soft:#12343a;--danger:#ff7b6b;--ok:#55d08a;color-scheme:dark}}
+*{box-sizing:border-box}
+body{margin:0;background:var(--paper);color:var(--ink);font-family:"Segoe UI",system-ui,-apple-system,Roboto,Arial,sans-serif;line-height:1.55}
+.app{max-width:860px;margin:0 auto;padding:1.5rem 1.2rem 4rem}
+.tabs{display:flex;gap:.5rem;flex-wrap:wrap;margin-bottom:1.5rem}
+.tab{background:var(--card);color:var(--ink);border:1.5px solid var(--line)}
+.tab.active{background:var(--accent);color:var(--accent-ink);border-color:var(--accent)}
+h1{margin:.2rem 0}
+h2{margin:0 0 .8rem;font-size:1.15rem}
+.sub{color:var(--muted);margin:0 0 1.5rem}
+button{font:inherit;font-weight:600;cursor:pointer;border:1.5px solid transparent;border-radius:8px;padding:.55rem 1.1rem;background:var(--accent);color:var(--accent-ink)}
+button:hover{filter:brightness(1.08)}
+button.ghost{background:transparent;color:var(--ink);border-color:var(--line)}
+button:focus-visible,input:focus-visible,select:focus-visible,textarea:focus-visible{outline:3px solid var(--accent);outline-offset:2px}
+.panel{background:var(--card);border:1px solid var(--line);border-radius:10px;padding:1.2rem;margin-top:1.2rem}
+label{display:block;font-weight:600;font-size:.92rem;margin-bottom:.9rem}
+label.inline{display:inline-flex;align-items:center;gap:.4rem;font-weight:500;margin-right:1rem}
+input,select,textarea{display:block;width:100%;margin-top:.3rem;font:inherit;color:var(--ink);background:var(--paper);border:1.5px solid var(--line);border-radius:8px;padding:.55rem .7rem}
+input[type=radio],input[type=checkbox]{display:inline;width:auto;margin:0}
+fieldset{border:1.5px solid var(--line);border-radius:8px;margin:0 0 .9rem;padding:.5rem .8rem}
+legend{font-weight:600;font-size:.92rem;padding:0 .3rem}
+/* profile cards */
+.cards{display:grid;grid-template-columns:repeat(auto-fill,minmax(230px,1fr));gap:1rem}
+.profile-card{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:1.4rem 1.2rem;text-align:center}
+.avatar{width:110px;height:110px;border-radius:50%;object-fit:cover;border:3px solid var(--accent-soft);background:var(--paper)}
+.profile-card h3{margin:.8rem 0 0}
+.role{margin:.1rem 0 .6rem;color:var(--accent);font-weight:600;font-size:.9rem}
+.desc{margin:0;color:var(--muted);font-size:.93rem}
+/* live data */
+dl{margin:0}
+.row{display:flex;gap:1rem;padding:.45rem 0;border-bottom:1px solid var(--line)}
+dt{width:110px;color:var(--muted);font-weight:600}
+dd{margin:0;flex:1;word-break:break-word;white-space:pre-wrap}
+.empty{color:var(--muted);font-style:italic}
+/* counter */
+.counter{text-align:center;padding:2rem 1.2rem}
+.count{font-size:5rem;font-weight:700;line-height:1;margin-bottom:1.2rem;font-variant-numeric:tabular-nums}
+.count.pos{color:var(--ok)} .count.neg{color:var(--danger)}
+.btn-row{display:flex;gap:.6rem;justify-content:center;flex-wrap:wrap}
+.step{max-width:200px;margin:1.5rem auto 0;text-align:left}
+
+.back{display:inline-block;margin-bottom:1rem;color:var(--accent);font-weight:600;text-decoration:none}
+</style>
+</head>
+<body>
+<div class="app">
+  <a class="back" href="../index.html">All assignments</a>
+  <div id="root"></div>
+</div>
+<!-- React 18 + Babel loaded from CDN so this file opens with a double-click (internet needed). -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/react/18.3.1/umd/react.development.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/react-dom/18.3.1/umd/react-dom.development.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/babel-standalone/7.23.9/babel.min.js"></script>
+<script type="text/babel">
+const { useState } = React;
+
+function Assignment6() {
+  const [count, setCount] = useState(0);
+  const [step, setStep] = useState(1);
+
+  return (
+    <section>
+      <h1>Counter App using useState</h1>
+      <p className="sub">The count lives in state. Each click calls the setter and React re-renders the number.</p>
+
+      <div className="panel counter">
+        <div className={"count " + (count > 0 ? "pos" : count < 0 ? "neg" : "")} aria-live="polite">{count}</div>
+        <div className="btn-row">
+          <button onClick={() => setCount(count - step)}>Decrement</button>
+          <button className="ghost" onClick={() => setCount(0)}>Reset</button>
+          <button onClick={() => setCount(count + step)}>Increment</button>
+        </div>
+        <label className="step">Step size
+          <select value={step} onChange={(e) => setStep(Number(e.target.value))}>
+            <option value={1}>1</option>
+            <option value={5}>5</option>
+            <option value={10}>10</option>
+          </select>
+        </label>
+      </div>
+    </section>
+  );
+}
+
+ReactDOM.createRoot(document.getElementById("root")).render(<Assignment6 />);
+</script>
+</body>
+</html>

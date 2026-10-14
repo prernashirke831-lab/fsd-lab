@@ -1,0 +1,11 @@
+.calc{padding:1rem}
+.display{background:var(--paper);border:1px solid var(--line);border-radius:8px;padding:.8rem 1rem;margin-bottom:1rem;text-align:right;min-height:96px;display:flex;flex-direction:column;justify-content:flex-end}
+.history{color:var(--muted);font-size:.95rem;min-height:1.4em;word-break:break-all}
+.screen{font-size:2.4rem;font-weight:600;line-height:1.2;word-break:break-all;font-variant-numeric:tabular-nums}
+.screen.err{font-size:1.2rem;color:var(--danger)}
+.keys{display:grid;grid-template-columns:repeat(4,1fr);grid-auto-rows:60px;gap:.6rem}
+.keys button{font-size:1.25rem;padding:0}
+.keys .num{background:var(--paper);color:var(--ink);border-color:var(--line)}
+.keys .op{background:var(--accent-soft);color:var(--ink);border-color:var(--accent)}
+.keys .equals{grid-column:4;grid-row:4 / span 2;height:auto}
+.keys .zero{grid-column:1 / span 2}
